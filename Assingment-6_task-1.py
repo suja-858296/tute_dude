@@ -12,13 +12,6 @@ def click(num):
     result = e.get()
     e.delete(0,"end")
     e.insert(0, str(result)+ str(num))
-b = Button(window,text='(',width=9 ,command=lambda:click('(') )
-b.place(x= 10, y=60)
-b = Button(window,text=')',width=9 ,command=lambda:click(')'))
-b.place(x= 125, y=60)
-
-b = Button(window,text='%',width=9 ,command= lambda:click('%'))
-b.place(x= 240, y=60)
 b = Button(window,text='7',width=9 ,command=lambda:click(7))
 b.place(x= 10, y=100)
 b = Button(window,text='8',width=9 ,command=lambda:click(8))
@@ -43,7 +36,7 @@ b = Button(window,text='.',width=9 ,command=lambda:click('.'))
 b.place(x= 125, y=220)
 def equal():
     n2 = e.get()
-    e.delete = (0, END)
+    e.delete(0, END)
     if math == "Addition":
         e.insert(0, i + int(n2))
     elif math =="Substraction":
@@ -56,7 +49,7 @@ def equal():
 b = Button(window,text='=',width=9 ,command= equal)
 b.place(x= 240, y=220)
 def clear():
-    e.delete(0, END,(1, END),(2, END))
+    e.delete(0, END)
 
 b = Button(window,text='AC',width=9 ,command= clear)
 b.place(x= 355, y=60)
@@ -97,3 +90,8 @@ def add():
 b = Button(window,text='+',width=9 ,command= add)
 b.place(x= 355, y=220)
 mainloop()
+
+# Sir I have not got the 3 recommendation that you have given ..
+# But all the buttons are working properly thankyou for the help.
+# (.) button is not working because it is not done in the lecture.
+# Please approve it. 
