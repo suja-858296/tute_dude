@@ -38,13 +38,13 @@ def equal():
     n2 = e.get()
     e.delete(0, END)
     if math == "Addition":
-        e.insert(0, i + int(n2))
+        e.insert(0, i + float(n2))
     elif math =="Substraction":
-        e.insert(0, i - int(n2))
+        e.insert(0, i - float(n2))
     elif math == "Division":
-        e.insert(0, i / int(n2))
+        e.insert(0, i / float(n2))
     elif math == "Multiplication":
-        e.insert(0, i * int(n2))
+        e.insert(0, i * float(n2))
 
 b = Button(window,text='=',width=9 ,command= equal)
 b.place(x= 240, y=220)
@@ -54,7 +54,7 @@ def clear():
 b = Button(window,text='AC',width=9 ,command= clear)
 b.place(x= 355, y=60)
 def div():
-    n1 = int(e.get())
+    n1 = float(e.get())
     global math
     math = "Division"
     global i
@@ -63,7 +63,7 @@ def div():
 b = Button(window,text='÷',width=9 ,command= div)
 b.place(x= 355, y=100)
 def mult():
-    n1 = int(e.get())
+    n1 = float(e.get())
     global math
     math = "Multiplication"
     global i
@@ -72,7 +72,7 @@ def mult():
 b = Button(window,text='x',width=9 ,command= mult)
 b.place(x= 355, y=140)
 def sub():
-    n1 = int(e.get())
+    n1 = float(e.get())
     global math
     math = "Substraction"
     global i
@@ -85,7 +85,7 @@ def add():
     global math
     math = "Addition"
     global i
-    i = int(n1)
+    i = float(n1)
     e.delete(0, END)
 b = Button(window,text='+',width=9 ,command= add)
 b.place(x= 355, y=220)
