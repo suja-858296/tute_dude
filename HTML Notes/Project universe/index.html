@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Planet Explorer</title>
+  <style>
+    /* --- CSS: Layout & Animation --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0c10;
+      color: white;
+      font-family: sans-serif;
+      overflow: hidden; /* Prevents scrollbars during rotation */
+    }
+
+    #app {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Top Stats */
+    .planet-info {
+      position: absolute;
+      top: 10%;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .stat h2 { font-size: 2rem; margin-bottom: 5px; }
+    .stat p { color: #888; font-size: 0.9rem; }
+    
+    .stat-group {
+      display: flex;
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item h3 { font-size: 1.5rem; font-weight: 300; }
+    .stat-item p { color: #888; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* SVG Navigation Arc */
+    .planet-nav {
+      position: absolute;
+      top: 30%;
+      width: 800px;
+      max-width: 100%;
+      z-index: 20;
+    }
+
+    .planet-nav svg {
+      width: 100%;
+      overflow: visible;
+      /* Smooth rotation animation */
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: center 250px; 
+    }
+
+    .planet-btn {
+      cursor: pointer;
+      fill: #888;
+      transition: fill 0.3s;
+      font-size: 14px;
+    }
+
+    .planet-btn:hover { fill: #fff; }
+
+    /* Dynamic highlighting based on the parent #app attribute */
+    [data-current-planet="mercury"] [data-planet="mercury"],
+    [data-current-planet="venus"] [data-planet="venus"],
+    [data-current-planet="earth"] [data-planet="earth"],
+    [data-current-planet="mars"] [data-planet="mars"],
+    [data-current-planet="jupiter"] [data-planet="jupiter"],
+    [data-current-planet="saturn"] [data-planet="saturn"],
+    [data-current-planet="uranus"] [data-planet="uranus"],
+    [data-current-planet="neptune"] [data-planet="neptune"] {
+      fill: #fff;
+      font-weight: bold;
+    }
+
+    /* Planet Image Container */
+    .planet-display {
+      position: absolute;
+      bottom: -30%;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      z-index: 5;
+      box-shadow: 0 0 100px rgba(255, 255, 255, 0.05);
+    }
+
+    .planet-display img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: opacity 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app" data-current-planet="earth">
+    
+    <div class="planet-info">
+      <div class="stat">
+        <h2 id="title-display">Earth</h2>
+        <p id="desc-display">Voted best planet in the Solar System by all organisms.</p>
+      </div>
+      <div class="stat-group">
+        <div class="stat-item">
+          <h3 id="tilt-display">5.13°</h3>
+          <p>Tilt</p>
+        </div>
+        <div class="stat-item">
+          <h3 id="gravity-display">7.3x</h3>
+          <p>Gravity</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="planet-nav">
+      <svg viewBox="0 20 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path id="navPath" d="M10,200 C30,-28 370,-28 390,200" fill="none" />
+        <text>
+          <textPath href="#navPath" startOffset="0" fill="white">
+            <tspan class="planet-btn" data-planet="mercury" dx="20">Mercury</tspan>
+            <tspan class="planet-btn" data-planet="venus" dx="20">Venus</tspan>
+            <tspan class="planet-btn" data-planet="earth" dx="20">Earth</tspan>
+            <tspan class="planet-btn" data-planet="mars" dx="20">Mars</tspan>
+            <tspan class="planet-btn" data-planet="jupiter" dx="20">Jupiter</tspan>
+            <tspan class="planet-btn" data-planet="saturn" dx="20">Saturn</tspan>
+            <tspan class="planet-btn" data-planet="uranus" dx="20">Uranus</tspan>
+            <tspan class="planet-btn" data-planet="neptune" dx="20">Neptune</tspan>
+          </textPath>
+        </text>
+      </svg>
+    </nav>
+
+    <div class="planet-display">
+      <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1000&auto=format&fit=crop" alt="Planet" id="planet-img">
+    </div>
+
+  </div>
+
+  <script>
+    // Data and target rotation angles for each planet
+    const planetData = {
+      mercury: { angle: 50,  img: 'images/mercury.jpg', title: 'Mercury', desc: 'The smallest planet in our solar system.', tilt: '0.03°', gravity: '0.38x' },
+      venus:   { angle: 33,  img: 'images/Venus_globe.jpg', title: 'Venus', desc: 'Spinning in the opposite direction to most planets.', tilt: '177.3°', gravity: '0.9x' },
+      earth:   { angle: 17,  img: 'images/Earth.jpg', title: 'Earth', desc: 'Voted best planet in the Solar System by all organisms.', tilt: '5.13°',  gravity: '7.3x' },
+      mars:    { angle: 0,   img: 'images/Mars.webp', title: 'Mars', desc: 'The Red Planet, a dusty, cold, desert world.', tilt: '25.2°',  gravity: '0.38x' },
+      jupiter: { angle: -17, img: 'images/Jupiter.png', title: 'Jupiter', desc: 'More than twice as massive as all other planets combined.', tilt: '3.1°',   gravity: '2.4x' },
+      saturn:  { angle: -33, img: 'images/Saturn.jpg', title: 'Saturn', desc: 'Adorned with a dazzling system of icy rings.', tilt: '26.7°',  gravity: '1.06x' }, // Using earth placeholder, replace with saturn
+      uranus:  { angle: -50, img: 'images/Uranus.jpg', title: 'Uranus', desc: 'Rotates at a nearly 90-degree angle from the plane of its orbit.', tilt: '97.8°',  gravity: '0.92x' }, // Using mercury placeholder
+      neptune: { angle: -67, img: 'images/Neptune.jpeg', title: 'Neptune', desc: 'Dark, cold, and whipped by supersonic winds.', tilt: '28.3°',  gravity: '1.19x' } // Using venus placeholder
+    };
+
+    // DOM Elements
+    const svgElement = document.querySelector('.planet-nav svg');
+    const appContainer = document.getElementById('app');
+    const planetImg = document.getElementById('planet-img');
+    
+    const titleDisplay = document.getElementById('title-display');
+    const descDisplay = document.getElementById('desc-display');
+    const tiltDisplay = document.getElementById('tilt-display');
+    const gravityDisplay = document.getElementById('gravity-display');
+
+    // Initial setup to rotate to Earth (since it's the default in HTML)
+    svgElement.style.transform = `rotate(${planetData['earth'].angle}deg)`;
+
+    // Click Event Listener
+    document.querySelectorAll('.planet-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const selectedPlanet = e.target.getAttribute('data-planet');
+        const data = planetData[selectedPlanet];
+
+        // 1. Update the active highlight color via CSS
+        appContainer.setAttribute('data-current-planet', selectedPlanet);
+
+        // 2. Rotate the SVG Arc
+        svgElement.style.transform = `rotate(${data.angle}deg)`;
+
+        // 3. Fade out image, update data, fade back in
+        planetImg.style.opacity = 0; 
+        
+        setTimeout(() => {
+          // Swap image source
+          planetImg.src = data.img;
+          
+          // Update Text Stats
+          titleDisplay.textContent = data.title;
+          descDisplay.textContent = data.desc;
+          tiltDisplay.textContent = data.tilt;
+          gravityDisplay.textContent = data.gravity;
+
+          // Fade image back in
+          planetImg.style.opacity = 1;
+        }, 400); // 400ms matches the CSS opacity transition time
+      });
+    });
+  </script>
+</body>
+</html>
