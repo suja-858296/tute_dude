@@ -1,0 +1,48 @@
+body{
+    background-color: rgba(241, 91, 9, 0.795);
+}
+h1,h2,h4{
+    color: darkblue;
+}
+h4{
+    font-size: small;
+}
+h5{
+    font-size: 150%;
+}
+span{
+    color: red;
+}
+span1{
+    color: black;
+}
+
+#blime{
+    background-color: rgb(65, 204, 65);
+}
+body p{
+    color: white;
+    font-size: 150%;
+}
+
+#para{
+    font-size: 80%;
+    color: green;
+}
+ol span2{
+    color: blue;
+    background-color:yellow;
+}
+ol span3{
+    color: blue;
+    background-color: rgb(20, 20, 203);
+}
+ol{
+    color: white;
+}
+ul span4{
+    color: blue
+}
+ul span5{
+    color: red;
+}
