@@ -1,48 +1,37 @@
 body{
-    background-color: rgba(241, 91, 9, 0.795);
+    background-color: rgb(255, 115, 0);
 }
-h1,h2,h4{
+.head{
     color: darkblue;
 }
-h4{
-    font-size: small;
+#bglime{
+    background-color: rgb(92, 246, 92);
 }
-h5{
-    font-size: 150%;
-}
-span{
+span.red{
     color: red;
 }
-span1{
+p{
+    color: white;
+    font-size: larger;
+}
+#para{
+    color: rgb(2, 99, 2);
+}
+span.black{
     color: black;
 }
-
-#blime{
-    background-color: rgb(65, 204, 65);
-}
-body p{
-    color: white;
-    font-size: 150%;
-}
-
-#para{
-    font-size: 80%;
-    color: green;
-}
-ol span2{
-    color: blue;
-    background-color:yellow;
-}
-ol span3{
-    color: blue;
-    background-color: rgb(20, 20, 203);
-}
-ol{
+ul{
     color: white;
 }
-ul span4{
-    color: blue
+span.hyellow{
+    background-color: yellow;
 }
-ul span5{
+span.hblue{
+    background-color: blue;
+}
+section > ol > li:nth-child(2){
+    color: blue;
+}
+section > ol > li:nth-child(3){
     color: red;
 }
