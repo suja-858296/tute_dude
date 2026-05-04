@@ -1,0 +1,153 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Ensures no scrollbars appear if math is tight */
+}
+
+/* --- NAVBAR REFACTORED --- */
+.navbar {
+    background-color: hsl(180, 100%, 100%);
+    height: 10vh; /* Fixed viewport height */
+    line-height: 10vh; /* Centers content vertically */
+    text-align: center; /* Centers the inline-block elements */
+    border-bottom: 1px solid #eee;
+    white-space: nowrap; /* Prevents wrapping if window is small */
+}
+
+/* Using inline-block instead of absolute positioning */
+.logo, .nav-links, .user-section {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.logo {
+    width: 20%;
+    text-align: left;
+    padding-left: 2vw;
+}
+
+.nav-links {
+    width: 55%;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 1.5vw;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: hsl(0, 0%, 33%);
+    transition: color 0.3s; /* Hover transition */
+}
+
+.nav-links a:hover {
+    color: hsl(212, 72%, 59%); /* Hover effect */
+}
+
+.user-section {
+    width: 20%;
+    text-align: right;
+    padding-right: 2vw;
+}
+
+.user-btn {
+    background-color: aliceblue;
+    border: 1px solid hsl(212, 72%, 59%);
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: hsl(212, 72%, 59%);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-btn:hover {
+    background-color: hsl(212, 72%, 95%);
+}
+
+/* --- HERO SECTION REFACTORED --- */
+.hero-section {
+    height: 150vh; /* Fills remaining viewport */
+    width: 100vw;
+    font-size: 0; /* Removes whitespace gap between inline-blocks */
+}
+
+/* Replaced Grid with Inline-Block */
+.hero-content, .hero-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%; 
+    font-size: 16px; /* Reset font size for text */
+}
+
+.hero-content {
+    padding: 0 5vw;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 3vh;
+}
+
+.hero-content h1 span {
+    color: hsl(212, 72%, 59%);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: hsl(0, 0%, 47%);
+    margin-bottom: 4vh;
+}
+
+.cta-button {
+    background-color: hsl(212, 72%, 59%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: hsl(212, 72%, 50%);
+    transform: translateY(-2px); /* Subtle hover lift */
+}
+
+.hero-image {
+    text-align: center;
+    height: 70px;
+    
+    
+}
+
+.hero-image img {
+    max-width: 90%;
+    max-height: 80vh; /* Prevents image from forcing a scrollbar */
+    width: auto;
+    height: auto;
+}
+
+
+@media (max-width: 900px) {
+    .navbar, .hero-section {
+        height: auto;
+        overflow: visible;
+    }
+    .hero-content, .hero-image, .logo, .nav-links, .user-section {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+}
