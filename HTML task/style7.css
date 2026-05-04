@@ -1,153 +1,94 @@
-/* Reset and Base Styles */
+
+:root {
+    --primary-blue: hsl(212, 72%, 59%);
+    --light-blue: hsl(212, 72%, 95%);
+    --text-dark: hsl(0, 0%, 33%);
+    --white: #ffffff;
+    --transition-smooth: all 0.4s ease-in-out;
+    --nav-height: 10vh;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: var(--transition-smooth);
 }
 
 body {
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Ensures no scrollbars appear if math is tight */
+    overflow-x: hidden;
 }
 
-/* --- NAVBAR REFACTORED --- */
 .navbar {
-    background-color: hsl(180, 100%, 100%);
-    height: 10vh; /* Fixed viewport height */
-    line-height: 10vh; /* Centers content vertically */
-    text-align: center; /* Centers the inline-block elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    padding: 0 5vw;
+    background-color: var(--white);
     border-bottom: 1px solid #eee;
-    white-space: nowrap; /* Prevents wrapping if window is small */
-}
-
-/* Using inline-block instead of absolute positioning */
-.logo, .nav-links, .user-section {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
-
-.logo {
-    width: 20%;
-    text-align: left;
-    padding-left: 2vw;
 }
 
 .nav-links {
-    width: 55%;
+    display: flex;
     list-style: none;
-}
-
-.nav-links li {
-    display: inline-block;
-    margin: 0 1.5vw;
+    gap: 2vw; 
 }
 
 .nav-links a {
     text-decoration: none;
-    color: hsl(0, 0%, 33%);
-    transition: color 0.3s; /* Hover transition */
+    color: var(--text-dark);
+    font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: hsl(212, 72%, 59%); /* Hover effect */
-}
-
-.user-section {
-    width: 20%;
-    text-align: right;
-    padding-right: 2vw;
+    color: var(--primary-blue);
 }
 
 .user-btn {
     background-color: aliceblue;
-    border: 1px solid hsl(212, 72%, 59%);
+    border: 1px solid var(--primary-blue);
     padding: 8px 15px;
     border-radius: 8px;
-    color: hsl(212, 72%, 59%);
+    color: var(--primary-blue);
     cursor: pointer;
-    transition: background-color 0.3s;
 }
-
-.user-btn:hover {
-    background-color: hsl(212, 72%, 95%);
-}
-
-/* --- HERO SECTION REFACTORED --- */
 .hero-section {
-    height: 150vh; /* Fills remaining viewport */
-    width: 100vw;
-    font-size: 0; /* Removes whitespace gap between inline-blocks */
-}
-
-/* Replaced Grid with Inline-Block */
-.hero-content, .hero-image {
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%; 
-    font-size: 16px; /* Reset font size for text */
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+    padding: 5vw;
 }
 
 .hero-content {
-    padding: 0 5vw;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 3vh;
-}
-
-.hero-content h1 span {
-    color: hsl(212, 72%, 59%);
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    color: hsl(0, 0%, 47%);
-    margin-bottom: 4vh;
-}
-
-.cta-button {
-    background-color: hsl(212, 72%, 59%);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: hsl(212, 72%, 50%);
-    transform: translateY(-2px); /* Subtle hover lift */
+    flex: 1;
 }
 
 .hero-image {
+    flex: 1;
     text-align: center;
-    height: 70px;
-    
-    
 }
 
 .hero-image img {
     max-width: 90%;
-    max-height: 80vh; /* Prevents image from forcing a scrollbar */
-    width: auto;
     height: auto;
 }
-
-
 @media (max-width: 1024px) {
-    .navbar, .hero-section {
-        height: auto;
-        overflow: visible;
-    }
-    .hero-content, .hero-image, .logo, .nav-links, .user-section {
-        display: block;
-        width: 100%;
+    .hero-section {
+        flex-direction: column;
         text-align: center;
-        padding: 20px;
+    }
+    
+    .nav-links {
+        display: none; 
     }
 }
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
