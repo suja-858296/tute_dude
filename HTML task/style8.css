@@ -6,37 +6,39 @@
 
 body {
     font-family: Arial, sans-serif;
-    overflow: hidden; 
+    overflow-x: hidden; /* Prevents side-scrolling issues on mobile */
 }
+
 
 .navbar {
-    background-color: hsl(180, 100%, 100%);
-    height: 10vh; 
-    line-height: 10vh; 
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    white-space: nowrap; 
-}
-
-.logo, .nav-links, .user-section {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
-
-.logo {
-    width: 20%;
-    text-align: left;
-    padding-left: 2vw;
-}
-
-
-.user-section {
-    width: 20%;
-    text-align: right;
-    padding-right: 3vw;
     display: flex;
-    margin-left: 90%;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 5vw;
+    background-color: hsl(180, 100%, 100%);
+    border-bottom: 1px solid #eee;
+}
+
+.logo h2 {
+    color: #333;
+}
+
+/* Hide hamburger button on large screens */
+.hamburger {
+    display: none; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
 }
 
 .user-btn {
@@ -55,28 +57,22 @@ body {
 
 
 .hero-section {
-    height: 150vh;
-    width: 100vw;
-    font-size: 0; 
-}
-
-
-.hero-content, .hero-image {
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%; 
-    height: 40%;
-    font-size: 19px; /* Reset font size for text */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh; 
+    padding: 0 5vw;
 }
 
 .hero-content {
-    padding: 0 5vw;
+    width: 50%;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 3vh;
+    color: #222;
 }
 
 .hero-content h1 span {
@@ -102,102 +98,112 @@ body {
 
 .cta-button:hover {
     background-color: hsl(212, 72%, 50%);
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 .hero-image {
-    
-    
-    text-align: center;
-    height: 50%;
-    margin-top:150px ;   
-    
+    width: 45%;
+    text-align: right;
 }
 
 .hero-image img {
     max-width: 90%;
-    max-height: 100vh; 
-    width: 360px;
     height: auto;
+    border-radius: 10px; /* Optional: adds a nice curve to the image */
 }
 
 @media (max-width: 900px) {
-    .navbar, .hero-section {
+    
+    /* Adjust layout for mobile */
+    .hero-section {
+        flex-direction: column;
         height: auto;
-        overflow: visible;
-    }
-    .hero-content, .hero-image, .logo, .nav-links, .user-section {
-        display: block;
-        width: 100%;
         text-align: center;
-        padding: 40px;
+        padding: 40px 5vw;
     }
-}
 
+    .hero-content, .hero-image {
+        width: 100%;
+        display: block;
+    }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #333;
-  color: white;
-}
+    .hero-content {
+        margin-bottom: 40px;
+    }
 
-#menu-toggle {
-  display:  none;
-}
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px; 
-  cursor: pointer;
-  z-index: 10; 
-}
+    .user-section {
+        display: none; /* Hide login button to save space on mobile */
+    }
 
-.hamburger .line {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease-in-out; 
-}
+    /* -------------------------------------
+       MENTOR FIX: Hamburger Button & Focus 
+       ------------------------------------- */
+       
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        /* Reset default button styles */
+        background: transparent;
+        border: none;
+        padding: 0;
+        z-index: 100;
+    }
 
-.nav-links {
-  display: none;
-  list-style: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px; 
-  left: 0;
-  width: 30%;
-  height: 60%;
-  background-color: #444;
-  text-align: center;
-}
+    .hamburger .line {
+        height: 4px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none; /* Ensures clicking the lines triggers the button focus */
+    }
 
-.nav-links li a {
-  display: block;
-  padding: 2rem;
-  color: white;
-  text-decoration: none;
-}
+    /* Hide links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh; /* Sit exactly below navbar */
+        left: 0;
+        width: 100%;
+        background-color: #444;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 99;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-#menu-toggle:checked ~ .nav-links {
-  display: flex;
-}
+    .nav-links li {
+        margin: 15px 0;
+    }
 
-#menu-toggle:checked ~ .hamburger .line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
+    .nav-links a {
+        color: white;
+    }
 
-#menu-toggle:checked ~ .hamburger .line:nth-child(2) {
-  opacity: 0;
-}
+    /* MAGIC HAPPENS HERE: When button is focused, show sibling nav-links */
+    .hamburger:focus ~ .nav-links {
+        display: flex;
+    }
 
-#menu-toggle:checked ~ .hamburger .line:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+    /* Animate lines when button is focused */
+    .hamburger:focus .line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger:focus .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger:focus .line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }
