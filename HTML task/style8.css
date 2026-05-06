@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -38,9 +37,6 @@ body {
     padding-right: 3vw;
     display: flex;
     margin-left: 90%;
-    
-
-
 }
 
 .user-btn {
@@ -125,7 +121,6 @@ body {
     height: auto;
 }
 
-/* Responsive adjustment */
 @media (max-width: 900px) {
     .navbar, .hero-section {
         height: auto;
