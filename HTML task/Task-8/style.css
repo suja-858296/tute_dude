@@ -72,7 +72,7 @@ body {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 3vh;
-    color: #222;
+    color: hsl(0, 0%, 13%);
 }
 
 .hero-content h1 span {
@@ -139,8 +139,6 @@ body {
         display: none; 
     }
 
-  
-       
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -179,7 +177,7 @@ body {
     }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 14px 0;
     }
 
     .nav-links a {
