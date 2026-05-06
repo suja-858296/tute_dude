@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevents side-scrolling issues on mobile */
+    overflow-x: hidden; 
 }
 
 
@@ -24,7 +24,7 @@ body {
     color: #333;
 }
 
-/* Hide hamburger button on large screens */
+
 .hamburger {
     display: none; 
 }
@@ -109,12 +109,12 @@ body {
 .hero-image img {
     max-width: 90%;
     height: auto;
-    border-radius: 10px; /* Optional: adds a nice curve to the image */
+    border-radius: 10px;
 }
 
 @media (max-width: 900px) {
     
-    /* Adjust layout for mobile */
+    
     .hero-section {
         flex-direction: column;
         height: auto;
@@ -136,12 +136,10 @@ body {
     }
 
     .user-section {
-        display: none; /* Hide login button to save space on mobile */
+        display: none; 
     }
 
-    /* -------------------------------------
-       MENTOR FIX: Hamburger Button & Focus 
-       ------------------------------------- */
+  
        
     .hamburger {
         display: flex;
@@ -150,7 +148,7 @@ body {
         width: 30px;
         height: 22px;
         cursor: pointer;
-        /* Reset default button styles */
+       
         background: transparent;
         border: none;
         padding: 0;
@@ -163,15 +161,14 @@ body {
         background-color: #333;
         border-radius: 3px;
         transition: all 0.3s ease-in-out;
-        pointer-events: none; /* Ensures clicking the lines triggers the button focus */
+        pointer-events: none; 
     }
 
-    /* Hide links by default on mobile */
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 10vh; /* Sit exactly below navbar */
+        top: 10vh;
         left: 0;
         width: 100%;
         background-color: #444;
@@ -189,12 +186,11 @@ body {
         color: white;
     }
 
-    /* MAGIC HAPPENS HERE: When button is focused, show sibling nav-links */
     .hamburger:focus ~ .nav-links {
         display: flex;
     }
 
-    /* Animate lines when button is focused */
+   
     .hamburger:focus .line:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
