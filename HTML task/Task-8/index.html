@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry Services</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Service</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <h2>Logo</h2>
-        </div>
+  <div class="menu-container">
+    <!-- Clickable box than is not visible but it opens hamburger menu by clicking -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
-        
-        <button class="hamburger" tabindex="0">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </button>
+    <!-- Hamburger lines -->
+    <label for="menu-toggle" class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </label>
 
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-
-        <div class="user-section">
-            <button class="user-btn">Log In</button>
-        </div>
-    </nav>
-
-    <main class="hero-section">
-        <div class="hero-content">
-            <h1>Revitalize Your <br> Clothes with Experts <br> <span>Laundry Services!</span></h1>
-            <p>From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!</p>
-            <button class="cta-button">Book a service today!</button>
-        </div>
-        <div class="hero-image">
-            
-            <img src="./images/washingmachine2.jpeg" alt="Laundry Services">
-        </div>
-    </main>
+    <!-- the menus -->
+    <ul class="menu-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="left">
+      <h1>Revitalize Your <br>Clothes with Experts <br> Laundry Services!</h1>
+      <p>From prenimum dry cleaning to swift wash and fold, we deliver care and
+        convenience. Schedule a pickup and rediscover the freshness of your clothes
+        today!
+      </p>
+      <button>Book a Service Now!</button>
+    </div>
+    <div class="right">
+      <img src="./images/image.png" alt="img">
+    </div>
+  </div>
 </body>
+
 </html>
