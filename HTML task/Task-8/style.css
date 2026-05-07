@@ -5,6 +5,8 @@
 }
 
 .menu-container {
+  /* Added relative positioning to act as the ancestor for the absolute menu */
+  position: relative; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,22 +15,22 @@
   width: 100%;
 }
 
-.menu-checkbox {
-  display: none;
-}
-
 /* less than 900px menu */
 @media (max-width: 900px) {
   .hamburger-lines {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
+    left: 1000px;
+    width: 20px;
     height: 22px;
     cursor: pointer;
-    
     position: relative;
     z-index: 1000; 
+    
+    /* Reset default button styles */
+    background: transparent;
+    border: none;
   }
 
   .line {
@@ -37,22 +39,24 @@
     width: 100%;
     background: #333;
     border-radius: 10px;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
 
   .menu-items {
-    position: fixed;
-    top: 0;
-    left: -250px;
+    /* Changed fixed to absolute positioning */
+    position: absolute; 
+    top: 100%; /* Pushes the menu right below the menu-container */
+    right: -700px; /* Positioned off-screen to the right */
     width: 250px;
     height: 100vh;
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 80px 20px;
+    padding: 40px 20px;
     transition: transform 0.5s ease-in-out;
     list-style: none;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1); /* Flipped shadow to left side */
+    z-index: 999;
   }
 
   .menu-items li {
@@ -65,40 +69,42 @@
     font-size: 1.5rem;
   }
 
-  
-  .menu-checkbox:checked ~ .menu-items {
-    transform: translateX(100%); 
+  /* Interaction logic using the :focus pseudo-class */
+  .hamburger-lines:focus ~ .menu-items {
+    /* Slides the menu inward from the right */
+    transform: translateX(-110%); 
   }
 
-  .menu-checkbox:checked ~ .hamburger-lines .line1 {
+  .hamburger-lines:focus .line1 {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
-  .menu-checkbox:checked ~ .hamburger-lines .line2 {
+  .hamburger-lines:focus .line2 {
     opacity: 0;
   }
 
-  .menu-checkbox:checked ~ .hamburger-lines .line3 {
+  .hamburger-lines:focus .line3 {
     transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .container{
+    flex-direction: column;
   }
 }
 
-
 @media (min-width: 901px) {
-  
   .hamburger-lines {
     display: none;
   }
 
-  
   .menu-items {
     display: flex;
-    position: static;
+    position: static ;
     height: auto;
     width: auto;
     background: transparent;
     box-shadow: none;
     padding: 0;
+    left: 400px;
     list-style: none;
   }
 
@@ -113,45 +119,49 @@
     font-size: 1.1rem;
     font-weight: 500;
   }
- 
+  
 }
+
 /* Web page display */
-.left{
+.left {
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 50%;
 }
-.left h1{
+
+.left h1 {
   font-size: 50px;
   margin-left: 70px;
   margin-top: 50px;
   padding-top: 20px;
   padding-left: 20px;
 }
-.left p{
+
+.left p {
   font-size: 18px;
   margin-left: 40px;
   margin-top: 40px;
 }
-.left button{
+
+.left button {
   display: inline-block;
   margin-top: 70px;
   margin-left: 150px;
-  padding: 10px ;
+  padding: 10px;
   padding-left: 30px;
   width: 40%;
   background-color: rgba(0, 255, 255, 0.82);
   text-decoration: none;
-  left: 30%;
   border: navajowhite;
 }
-.container{
+
+.container {
   display: flex;
 }
-.right{
-  display: flex;
-  
 
-  
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
 }
