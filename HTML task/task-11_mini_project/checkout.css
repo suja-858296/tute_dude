@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.container-left-3{
+    display: block;
+    margin-left: 50px;
+    margin-top: 35px;
+    justify-content: left;
+
+}
+header h3{
+    color: rgb(98, 96, 96);
+    margin-bottom: 20px;
+}
+header h1{
+    font-size: x-large;
+    margin-bottom: 15px;
+}
+.email-id{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.email-id input{
+    height:40px ;
+    width: 70vh;
+    border-radius: 10px;
+    padding-left: 20px;
+    background-color: #F5F5F5;
+}
+main h2{
+    margin-top: 25px;
+}
+.card-details{
+    border: 2px solid #e5e3e3;
+    margin-right: 70px;
+    border-radius: 10px;
+    padding-bottom: 120px;
+    margin-top: 20px;
+}
+.card-logo{
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.logo-1 {
+    padding: 15px 45px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #ffa500;
+}
+.logo-2 ,.logo-3{
+    padding: 15px 45px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.logo-4{
+    padding: 15px 45px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.card-num{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.card-num input{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 10px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.card-expiry{
+    display: flex;
+    margin-left: 10px;
+    gap: 15px;
+    margin-top: 20px;
+}
+.expiry{
+    display: flex;
+    flex-direction: column;
+    
+}
+.expiry input{
+    height: 35px;
+    width: 25vh;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.card-cvc{
+    display: flex;
+    flex-direction: column;
+}
+.card-cvc input{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 25vh;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.card-country{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.country{
+    display: flex;
+    flex-direction: column;
+}
+.country input{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 25vh;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.card-zip{
+    display: flex;
+    flex-direction: column;
+}
+.card-zip input{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 25vh;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.container-right-3{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #e5e3e3;
+    justify-content: center;
+    align-items: center;
+}
+.container-right-3 h1{
+    margin-bottom: 30px;
+}
+.order-summery{
+    border:2px solid gray ;
+    border-radius: 10px;
+    background-color: white;
+    padding-top: 22px;
+    padding-left: 20px;
+    
+}
+.container-right-3 h1{
+    margin-bottom: 70px;
+    font-size: xxx-large;
+}
+.order-summery label{
+    margin-top: 20px;
+}
+.input-coupon-code input{
+    height: 40px;
+    width: 20vw;
+    margin-left: 30px;
+    margin-right: 10px;
+    border-radius: 6px;
+    padding-left: 10px;
+    border: 2px solid rgb(200, 192, 192);
+}
+.input-coupon-code button{
+    height: 45px;
+    width: 120px;
+    margin-right: 30px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: rgb(35, 79, 241);
+    color: white;
+    border: none;
+}
+.sub-total ,.taxes, .discount{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.paynow-btn button{
+    margin-top: 30px;
+    padding: 25px 200px;
+    border-radius: 20px;
+    color: white;
+    background-color: #ffa500;
+    border: none;
+    font-size: large;
+}
+.razorpay-img{
+    display: flex;
+    height: 70px;
+    width: 70px;
+    gap: 130px;
+    margin-top: 30px;
+    margin-right: 120px;
+    
+}
+/* Pseudo class section */
+.logo-2:hover,.logo-3:hover,.logo-4:hover{
+    border: 2px solid orange;
+    color: #ffa500;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+.logo-1:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+.paynow-btn button:hover{
+    transform: translateY(-2px);
+    background-color: #ff9900;
+    cursor: pointer;
+}
+.input-coupon-code button:hover{
+    transform: translateY(-2px);
+    background-color: rgb(3, 56, 247);
+    cursor: pointer;
+}

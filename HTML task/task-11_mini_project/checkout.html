@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <div class="container-3">
+        <div class="container-left-3">
+            <header>
+                <h3>Checkout</h3>
+                <h1>Contact Details</h1>
+                <div class="email-id">
+                    <label for="">Email ID</label>
+                    <input type="text" placeholder="email@email.com" required>
+                </div>
+            </header>
+            <main>
+                <h2>Payment</h2>
+                <div class="card-details">
+                    <div class="card-logo">
+                        <span class="logo-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-wallet-cards-icon lucide-wallet-cards">
+                                <rect width="18" height="18" x="3" y="3" rx="2" />
+                                <path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2" />
+                                <path
+                                    d="M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21" />
+                            </svg></span>
+                        <span class="logo-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-bitcoin-icon lucide-bitcoin">
+                                <path
+                                    d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727" />
+                            </svg></span>
+                        <span class="logo-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-landmark-icon lucide-landmark">
+                                <path d="M10 18v-7" />
+                                <path
+                                    d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" />
+                                <path d="M14 18v-7" />
+                                <path d="M18 18v-7" />
+                                <path d="M3 22h18" />
+                                <path d="M6 18v-7" />
+                            </svg></span>
+                        <span class="logo-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical">
+                                <circle cx="12" cy="12" r="1" />
+                                <circle cx="12" cy="5" r="1" />
+                                <circle cx="12" cy="19" r="1" />
+                            </svg></span>
+                    </div>
+                    <div class="card-num">
+                        <label for="">Card Number</label>
+                        <input type="text" placeholder="John Doe">
+                    </div>
+                    <div class="card-expiry">
+                        <div class="expiry">
+                            <label for="">Expiry</label>
+                            <input type="text" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="card-cvc">
+                            <label for="">CVC</label>
+                            <input type="number" max="4" placeholder="***">
+                        </div>
+                    </div>
+                    <div class="card-country">
+                        <div class="country">
+                            <label for="">Country</label>
+                            <input type="text" placeholder="Country Name">
+                        </div>
+                        <div class="card-zip">
+                            <label for="">Zip</label>
+                            <input type="number" maxlength="6" placeholder="xxxxx">
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="container-right-3">
+            <h1>order-summary</h1>
+            <div class="order-summery">
+                <label for="">Enter Coupon Code</label>
+                <div class="input-coupon-code">
+                    <input type="text" placeholder="COUPON CODE">
+                    <button>Apply Coupon</button>
+                </div>
+                <div class="sub-total">
+                    <span>Sub Total</span>
+                    <span>₹4,700</span>
+                </div>
+                <div class="taxes">
+                    <span>Taxes(If Applicable)</span>
+                    <span>₹199</span>
+                </div>
+                <div class="discount">
+                    <span>Discount</span>
+                    <span>₹0</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span>₹4,999</span>
+                </div>
+            </div>
+            <div class="paynow-btn">
+                <button>PayNow ₹4,999 </button>
+            </div>
+            <div class="razorpay-img">
+                <img class="img-card" src="./images/icons8-secure-payment-48.png"alt="">
+                <img class="img-razorpay" src="./images/razorpay.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

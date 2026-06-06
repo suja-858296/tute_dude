@@ -1,0 +1,223 @@
+/* Header Section */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.header{
+    display: flex;
+    gap: 100px;
+}
+.navbar{
+    display: flex;
+    gap: 50px;
+    
+}
+.logo{
+    display: flex;
+    color: orange;
+    padding-top: 20px;
+    padding-left: 120px;
+    gap: 10px;
+    font-size: 30px;
+}
+.logo-num{
+    color: blue;
+    padding-right: 20px;
+}
+.nav-links{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    text-align:center;
+    list-style-type: none;
+    padding-top: 30px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: gray;
+    
+}
+h1 span{
+    color: blue;
+}
+.search{
+    padding-top: 23px;
+    
+}
+input[type="search"]{
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.right-container{
+    display: flex;
+    gap: 20px;
+}
+input[type="text"]{
+    width: 40px;
+    padding: 5px 6px;
+    margin-top: 27px;
+    border-radius: 15%;
+}
+.profile-pic img{
+    max-width: 30%;
+    margin-top: 25px;
+}
+/* Header Section Ends */
+/* Main Section */
+.heading{
+    display: flex;
+    margin-left: 120px;
+    margin-top: 50px;
+}
+.container-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    place-content: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.left-container-2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px;
+    
+    
+     
+}
+.top-line{
+    display: flex;
+    margin-top: 10px;
+    text-align: center;
+    
+    
+}
+.product{
+    margin-right:190px ;
+}
+.quantity{
+    margin-right: 120px;
+}
+
+.first-line{
+    display: flex;
+    gap: 120px;
+    margin-top: 30px;
+    
+}
+.second-line{
+    display: flex;
+    gap: 120px;
+    margin-top: 30px;
+    
+}
+.third-line{
+    display: flex;
+    gap: 120px;
+    margin-top: 30px;
+}
+.right-container-2{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(213, 208, 208);
+    margin-left: 60px;
+    margin-right: 160px;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+.coupon-text{
+    display: flex;
+    margin: 15px;
+}
+.coupon-box{
+    display: flex;
+    color: rgb(47, 44, 44);
+}
+.coupon-box input{
+    display: flex;
+    padding: 17px 100px;
+    border-radius: 10px;
+    margin-left: 30px;
+    border: 1.5px solid gainsboro;   
+}
+.coupon-box button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #0056D2;
+    color: white;
+    margin-top: 27px;
+    margin-left: 20px;
+    border: none;
+}
+.sub-total{
+    display: flex;
+    margin-top: 20px;
+    gap: 260px;
+    margin-left: 20px;
+}
+.taxes{
+    display: flex;
+    margin-top: 20px;
+    gap: 200px;
+    margin-left: 20px;
+}
+.discount{
+    display: flex;
+    margin-top: 20px;
+    gap: 287px;
+    margin-left: 20px;
+}
+.total{
+    display: flex;
+    margin-top: 20px;
+    gap: 287px;
+    margin-left: 20px;
+}
+/* Main Section Ends */
+
+/* Footer Section Starts */
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 540px;
+}
+.left-footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.right-footer button{
+    width: 370px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgb(255, 162, 0);
+    color: white;
+    font-style: oblique;
+    font-weight: 600;
+    border: none;
+}
+.secure-pay-img{
+    display: flex;
+    gap: 60px;
+}
+.img-card{
+    height: 70px;
+    margin-top: 30px;
+}
+.img-razorpay{
+    margin-bottom: 20px;
+}
+/* Footer Section Ends */
