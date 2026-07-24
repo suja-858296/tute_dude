@@ -1,7 +1,7 @@
  const division = (a,b)=> {
     return new Promise((resolve, reject) => {
         if(typeof a !=='number' || typeof b !=='number'){
-            reject(new error('The input must be a number'));
+            reject(new Error('The input must be a number'));
        }else if (b ==0) {
             reject('Division by zero is not allowed');
         }else{
@@ -17,7 +17,8 @@
     {a:30 , b:15},
     {a:20 , b:10},
     {a:50 , b:5},
-    {a:100 ,b:0}    
+    {a:100 ,b:0},
+    {a:"or" , b:2}    
  ];
 num.forEach(({a,b})=>{
     division(a,b)
@@ -26,7 +27,7 @@ num.forEach(({a,b})=>{
             
         })
         .catch((error)=> {
-            console.log(` ${a} / ${0} -> Error: ${error.message}`);
+            console.log(` ${a} / ${b} -> Error: ${error.message}`);
             
             });
             
