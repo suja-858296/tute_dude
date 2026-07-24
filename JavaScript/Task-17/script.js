@@ -10,10 +10,10 @@
 
     });
  };
- console.log('--Promise Implementation--');
+ console.log('Result');
 
  const test= [
-    {a: 10 ,b:2},
+    {a: 12 ,b:2},
     {a:30 , b:15},
     {a:20 , b:10},
     {a:50 , b:5},
@@ -25,8 +25,9 @@ test.forEach(({a,b},index)=>{
             console.log(`Test ${index+1} : ${a} / ${b} = ${result}`);
             
         })
-        .catch((error)=> {
-            console.log(`Test ${index+1} : ${a} / ${b} -> Error: ${error.message}`);
+        .catch((Error)=> {
+            console.log(`Test ${index+1} : ${a} / ${0} -> Error: "The number can't be divided by zero";
+            }`);
             
         });
 });
