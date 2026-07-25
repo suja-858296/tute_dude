@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrasha Tech | Islamic-E-Learning</title>
+
+    <!-- Typography Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <span data-en="MadrashaTech" data-ur="مدرسہ ٹیک">Lishan Acedemy</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" data-en="Courses" data-ur="نصاب">Courses</a>
+                <a href="#" data-en="Mentorship" data-ur="رہنمائی">Mentorship</a>
+                <button class="btn btn-outline" onclick="toggleLanguage()" id="langBtn">اردو / EN</button>
+                <button class="btn btn-primary" onclick="toggleModal()" data-en="Student Login"
+                    data-ur="طالب علم لاگ ان">Student Login</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 data-en="Scholarly Islamic Education for the Modern Seeker"
+                data-ur="جدید دور کے طلباء کے لیے مستند اسلامی تعلیم">
+                Scholarly Islamic Education for the Modern Seeker
+            </h1>
+            <p data-en="Master Arabic, perfect your Tajweed, and explore Urdu literature through live interactive lectures, recorded video libraries, and dedicated 1-on-1 mentorship."
+                data-ur="لائیو انٹرایکٹو لیکچرز، ریکارڈ شدہ ویڈیو لائبریریوں اور سرشار 1-on-1 رہنمائی کے ذریعے عربی پر عبور حاصل کریں، اپنی تجوید کو کامل بنائیں، اور اردو ادب کو دریافت کریں۔">
+                Master Arabic, perfect your Tajweed, and explore Urdu literature through live interactive lectures,
+                recorded video libraries, and dedicated 1-on-1 mentorship.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" data-en="Explore Catalog" data-ur="نصاب دیکھئے">Explore Catalog</button>
+                <button class="btn btn-outline" data-en="Book Mentor Call" data-ur="مینٹور سے بات کریں">Book Mentor
+                    Call</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <main class="container">
+        <div class="section-title">
+            <h2 data-en="Featured Curriculums" data-ur="نمایاں نصاب">Featured Curriculums</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="grid">
+            <!-- Tajweed Course -->
+            <div class="card">
+                <span class="card-tag" data-en="Foundational" data-ur="بنیادی">Foundational</span>
+                <h3 data-en="Tajweed-ul-Quran" data-ur="تجوید القرآن">Tajweed-ul-Quran</h3>
+                <p data-en="Perfect your Quranic recitation with certified instructors. Includes both live practice sessions and recorded theoretical modules."
+                    data-ur="مستند اساتذہ کے ساتھ اپنی قرآنی تلاوت کو درست کریں۔ اس میں لائیو مشق کے سیشنز اور ریکارڈ شدہ نظریاتی ماڈیولز شامل ہیں۔">
+                </p>
+                <ul class="card-features">
+                    <li data-en="Live Zoom verification classes" data-ur="لائیو زوم تصدیقی کلاسز">Live Zoom verification
+                        classes</li>
+                    <li data-en="40+ Recorded video lessons" data-ur="40+ ریکارڈ شدہ ویڈیو اسباق">40+ Recorded video
+                        lessons</li>
+                    <li data-en="1-on-1 progress tracking" data-ur="1-on-1 پیشرفت سے باخبر رہنا">1-on-1 progress
+                        tracking</li>
+                </ul>
+                <button> <a href="tajweed_course.html" target="_blank" class="btn btn-outline"
+                        style="display: block; width: 100% ;box-sizing: border-box; padding: 11px 115px ;text-align: center; text-decoration: none; "
+                        data-en="View Syllabus" data-ur="نصاب دیکھیں">View
+                        Syllabus </a></button>
+            </div>
+
+            <!-- Arabic Course -->
+            <div class="card">
+                <span class="card-tag" data-en="Language" data-ur="زبان">Language</span>
+                <h3 data-en="Classical Arabic" data-ur="کلاسیکی عربی">Classical Arabic</h3>
+                <p data-en="Understand the Quran in its original language. Covering Sarf (Morphology) and Nahw (Syntax) progressively."
+                    data-ur="قرآن کو اس کی اصل زبان میں سمجھیں۔ صرف اور نحو کو بتدریج کور کرنا۔"></p>
+                <ul class="card-features">
+                    <li data-en="Weekly YouTube embedded live streams" data-ur="ہفتہ وار یوٹیوب ایمبیڈڈ لائیو اسٹریمز">
+                        Weekly YouTube embedded live streams</li>
+                    <li data-en="Comprehensive PDF worksheets" data-ur="جامع پی ڈی ایف ورک شیٹس">Comprehensive PDF
+                        worksheets</li>
+                    <li data-en="Direct mentor messaging" data-ur="ڈائریکٹ مینٹور میسجنگ">Direct mentor messaging</li>
+                </ul>
+                <button><a href="arabic_course.html" target="_blank" class="btn btn-outline"
+                        style="display: block; width: 100% ;box-sizing: border-box; padding: 11px 115px ;text-align: center; text-decoration: none; "
+                        data-en="View Syllabus" data-ur="نصاب دیکھیں">View
+                        Syllabus</a></button>
+            </div>
+
+            <!-- Urdu Course -->
+            <div class="card">
+                <span class="card-tag" data-en="Literature" data-ur="ادب">Literature</span>
+                <h3 data-en="Advanced Urdu" data-ur="ایڈوانسڈ اردو">Advanced Urdu</h3>
+                <p data-en="Dive deep into classic Urdu poetry and prose. Designed for students who want to read classical Islamic literature in Urdu."
+                    data-ur="کلاسک اردو شاعری اور نثر میں گہرا غوطہ لگائیں۔ ان طلباء کے لئے ڈیزائن کیا گیا ہے جو اردو میں کلاسیکی اسلامی ادب پڑھنا چاہتے ہیں۔">
+                </p>
+                <ul class="card-features">
+                    <li data-en="Access to digital library" data-ur="ڈیجیٹل لائبریری تک رسائی">Access to digital library
+                    </li>
+                    <li data-en="Stripe & Razorpay monthly options" data-ur="سٹرائپ اور ریزر پے ماہانہ اختیارات">Stripe
+                        & Razorpay monthly options</li>
+                    <li data-en="Certificate of completion" data-ur="تکمیل کا سرٹیفکیٹ">Certificate of completion</li>
+                </ul>
+                <button><a href="urdu_course.html" target="_blank" class="btn btn-outline"
+                        style="display: block; width: 100% ;box-sizing: border-box; padding: 11px 115px ;text-align: center; text-decoration: none; "
+                        data-en="View Syllabus" data-ur="نصاب دیکھیں">View
+                        Syllabus</a></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Student Login Modal -->
+    <div> <a href="login.html" class="btn btn-primary" data-en="Student Login" data-ur="طالب علم لاگ ان">Student
+            Login</a>
+
+        <div class="modal" id="loginmodal">
+            <button class="close-btn" onclick="toggleModal()">&times;</button>
+            <h2 style="margin-bottom: 24px;" data-en="Student Portal" data-ur="طالب علم پورٹل">Student Portal</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label data-en="Email Address" data-ur="ای میل ایڈریس">Email Address</label>
+                    <input type="email" required placeholder="scholar@example.com">
+                </div>
+                <div class="form-group">
+                    <label data-en="Password (JWT Auth)" data-ur="پاس ورڈ">Password (JWT Auth)</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;"
+                    data-en="Login to Dashboard" data-ur="لاگ ان کریں">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+    <div class="about-us" id="about-us">q
+        <label for="">About Us</label>
+        <div class="section-divider"></div>
+        <p>The best online platform to take islamic studies.
+            Our best teachers who has passed from the institute like Darul-uloom-Deoband
+            Jamiatul-oloom-Nadwatul-ulama.
+        </p>
+
+
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

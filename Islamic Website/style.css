@@ -1,0 +1,361 @@
+/* Design Guidelines - CSS Variables */
+:root {
+    --bg-primary: #FAFAF7;
+    --bg-secondary: #F3F1E7;
+    --surface: #FFFFFF;
+    
+    --text-primary: #1A201E;
+    --text-secondary: #4A5550;
+    --text-arabic: #0F1A15;
+    
+    --emerald-primary: #145038;
+    --emerald-light: #1E7353;
+    --gold-accent: #C49C48;
+    --earth-tertiary: #8C6A4F;
+    --border-subtle: #E5E2D9;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+    --font-arabic: 'Amiri', serif;
+    --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+    --shadow-subtle: 0 4px 20px rgba(20, 52, 43, 0.05);
+    --shadow-hover: 0 8px 30px rgba(20, 52, 43, 0.1);
+}
+
+/* Base Reset & RTL Logical Properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* RTL Support - Arabic/Urdu specific scaling */
+body[dir="rtl"] {
+    font-family: var(--font-urdu);
+    font-size: 110%; /* Urdu needs slightly larger base */
+    line-height: 2.2;
+}
+
+body[dir="rtl"] h1, body[dir="rtl"] h2, body[dir="rtl"] h3 {
+    font-family: var(--font-arabic);
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--emerald-primary);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navigation */
+header {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--emerald-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    background: var(--gold-accent);
+    border-radius: 2px 12px 2px 12px;
+    transform: rotate(45deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--emerald-primary);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--emerald-primary);
+    color: var(--surface);
+}
+
+.btn-primary:hover {
+    background-color: var(--emerald-light);
+    box-shadow: 0 4px 12px rgba(20, 80, 56, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--emerald-primary);
+    border: 1px solid var(--gold-accent);
+}
+
+.btn-outline:hover {
+    background-color: rgba(196, 156, 72, 0.1);
+}
+
+/* Hero Section with Geometric Pattern */
+.hero {
+    padding: 96px 0;
+    background-color: var(--bg-secondary);
+    /* Subtle Islamic geometric pattern via SVG */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15L15 15zM0 30l15-15 15 15-15 15zM30 60l15-15-15-15-15 15zM60 30l-15-15-15 15 15 15z' fill='%23145038' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: var(--emerald-dark);
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Courses Section */
+.section-title {
+    text-align: center;
+    margin: 96px 0 48px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold-accent);
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-divider::after {
+    content: "◆";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold-accent);
+    font-size: 12px;
+    background: var(--bg-primary);
+    padding: 0 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 96px;
+}
+
+/* Course Cards */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid transparent;
+}
+
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-top-color: var(--gold-accent);
+}
+
+.card-tag {
+    display: inline-block;
+    background: rgba(196, 156, 72, 0.15);
+    color: var(--earth-tertiary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.card-features {
+    list-style: none;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.card-features li {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-features li::before {
+    content: "•";
+    color: var(--gold-accent);
+}
+
+/* Mock Login Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 26, 21, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow-hover);
+    border-top: 4px solid var(--emerald-primary);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--emerald-light);
+    box-shadow: 0 0 0 3px rgba(30, 115, 83, 0.2);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: inline-end;
+    color: var(--text-muted);
+}
+.about-us{
+    background: var(--surface);
+}
+.about-us > label{
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+    font-size: 2.5rem;
+    padding-left: 40rem;
+    color: rgb(2, 81, 2);
+    font-family:var(--font-arabic);
+    font-weight: bold;      
+}
+.about-us p {
+    display: flex;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
