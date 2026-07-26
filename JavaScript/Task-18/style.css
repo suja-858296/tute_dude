@@ -1,0 +1,77 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.top-margin {
+    height: 70px;
+    width: 100vw;
+    background-color: aliceblue;
+}
+
+.text-hello {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.color {
+
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.red {
+    border: 1px solid black;
+    padding: 50px 50px;
+}
+
+.red.active {
+    background-color: red;
+}
+
+.green {
+    border: 1px solid black;
+    padding: 50px 50px;
+}
+
+.green.active {
+    background-color: green;
+}
+
+.yellow {
+    border: 1px solid black;
+    padding: 50px 50px;
+}
+
+.yellow.active {
+    background-color: yellow;
+}
+
+.blue {
+    border: 1px solid black;
+    padding: 50px 50px;
+}
+
+.blue.active {
+    background-color: blue;
+}
+.greet-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+#name-input{
+    padding: 12px 30px;
+    text-align: center;
+    font-size: larger;
+}
+#greet-button{
+    padding: 12px 20px;
+}
