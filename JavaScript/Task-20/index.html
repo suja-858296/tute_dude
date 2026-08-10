@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="heading">
+        <h2 class="logo">Logo</h2>
+        <ul class="nav-bar">
+            <li>Home</li>
+            <li>Services</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+        </ul>
+        <button class="usr-btn">Username</button>
+    </header>
+    <main>
+        <div class="container">
+
+            <div class="left-container">
+                <h1>Revitalize Your <br>Clothes With Expert <br>
+                    <span>Laundry Services!</span>
+                </h1>
+                <h4>For Premium dry cleaning to swift wash and fold,we <br>
+                    deliver care and convinience. Schedule a pickup and <br>
+                    rediscover the freshness of your clothes today!
+                </h4>
+                <button>Book a Service Today!</button>
+            </div>
+
+            <div class="right-container">
+                <img src="./images.jpeg" alt="">
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="bottom">
+            <h1>Our Achivements</h1>
+            <h3>15+ <br>Laundry Services</h3>
+            <h3>240+ <br>Happy Customers</h3>
+            <h3>2+ Yrs <br>Experience</h3>
+        </div>
+
+    </footer>
+    <div class="container-2">
+        <!-- LEFT DIV: Our Services -->
+        <div class="card left-div">
+            <h2>Our Services</h2>
+            <p class="subtitle">Click On The Add To Cart Button To Add The Services To Your Cart</p>
+
+            <div class="service-list">
+                <!-- Item 1 -->
+                <div class="service-item">
+                    <div id="serviceinfo-1" class="service-info">
+                        <span class="icon">🎀</span>
+                        <span>Dry Cleaning</span>
+                        <span>·</span>
+                        <span class="price">₹200.00</span>
+                    </div>
+                    <button id="addBtn-1" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="service-item">
+                    <div class="service-info">
+                        <span class="icon">🧺</span>
+                        <span>Wash & Fold</span>
+                        <span>·</span>
+                        <span class="price">₹100.00</span>
+                    </div>
+                    <button id="addBtn-2" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="service-item">
+                    <div class="service-info">
+                        <span class="icon">🔌</span>
+                        <span>Ironing</span>
+                        <span>·</span>
+                        <span class="price">₹30.00</span>
+                    </div>
+                    <button id="addBtn-3" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="service-item">
+                    <div class="service-info">
+                        <span class="icon">🌟</span>
+                        <span>Stain Removal</span>
+                        <span>·</span>
+                        <span class="price">₹500.00</span>
+                    </div>
+                    <button id="addBtn-4" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="service-item">
+                    <div class="service-info">
+                        <span class="icon">👞</span>
+                        <span>Leather & Suede Cleaning</span>
+                        <span>·</span>
+                        <span class="price">₹999.00</span>
+                    </div>
+                    <button id="addBtn-5" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="service-item border-none">
+                    <div class="service-info">
+                        <span class="icon">👗</span>
+                        <span>Wedding Dress Cleaning</span>
+                        <span>·</span>
+                        <span class="price">₹2800.00</span>
+                    </div>
+                    <button id="addBtn-6" class="btn-action btn-add">Add Item ⊕</button>
+                </div>
+            </div>
+
+            <div class="info-footer">
+                <span>ⓘ</span> Add the items to the cart and book now
+            </div>
+        </div>
+
+        <!-- RIGHT DIV: Added Items & Booking Form -->
+        <div class="card right-div">
+
+            <div class="added-items">
+                <h3>Added Items</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-sno">S.NO</th>
+                            <th class="col-name">Service Name</th>
+                            <th class="col-price">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-row">
+
+                    </tbody>
+                </table>
+                <div class="total-row">
+                    <span>Total Amount</span>
+                    <span class="totalAmount">₹0</span>
+                </div>
+            </div>
+
+            <div class="booking-section">
+                <h3>Book Now</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email ID</label>
+                            <input type="email" placeholder="mail@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="0000000000" required inputmode="numeric">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-submit">Book now</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
