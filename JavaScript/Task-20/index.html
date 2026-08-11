@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/nmp/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("J2OCtLJyYlbOu6RLt");
+    })();
+    </script>
 </head>
 
 <body>
@@ -153,24 +160,24 @@
 
             <div class="booking-section">
                 <h3>Book Now</h3>
-                <form action="#" method="POST">
+                <form id="booking-form" >
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" placeholder="John Doe" required>
+                        <input type="text" id="fullName" placeholder="John Doe" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label>Email ID</label>
-                            <input type="email" placeholder="mail@gmail.com" required>
+                            <input type="email" id="email" placeholder="mail@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="tel" placeholder="0000000000" required inputmode="numeric">
+                            <input type="tel" id="phone" placeholder="0000000000" required inputmode="numeric">
                         </div>
                     </div>
 
-                    <button type="button" class="btn-submit">Book now</button>
+                    <button type="submit" id="submit-btn" class="btn-submit">Book now</button>
                 </form>
             </div>
 

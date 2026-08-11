@@ -191,7 +191,7 @@ dryCleaningBtn6.addEventListener('click', () => {
     });
 
 
-let submitBtn = document.querySelector('.btn-submit')
+
 
 submitBtn.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -214,6 +214,43 @@ submitBtn.addEventListener('click',(e)=>{
         }
     
 });
+
+
+const bookingForm = document.getElementById('booking-form');
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.innerText = 'Sending...';
+
+    const fullName = document.getElementById('fullName').value;
+    const userEmail = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const totalAmount = document.querySelector('.totalAmount') ? document.querySelector('.totalAmount').innerText : '';
+
+
+    const templateParams = {
+      from_name: fullName,
+      to_email: userEmail,
+      phone_number: phone,
+      total_amount: totalAmount
+    };
+
+    emailjs.send('service_xtn7d0o', 'template_sqpfkb7', templateParams)
+      .then(function (response) {
+        alert('Booking successful! A confirmation email has been sent to ' + userEmail);
+        bookingForm.reset();
+        submitBtn.innerText = 'Book now';
+      }, function (error) {
+        console.error('EmailJS Error:', error);
+        alert('Failed to send confirmation email. Please check your EmailJS configuration.');
+        submitBtn.innerText = 'Book now';
+      });
+  });
+}
+
 
 
 
