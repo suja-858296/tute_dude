@@ -46,12 +46,7 @@ let tableData = [
 ]
 
 
-let dryCleaningBtn1 = document.querySelector('#addBtn-1')
-let dryCleaningBtn2 = document.querySelector('#addBtn-2')
-let dryCleaningBtn3 = document.querySelector('#addBtn-3')
-let dryCleaningBtn4 = document.querySelector('#addBtn-4')
-let dryCleaningBtn5 = document.querySelector('#addBtn-5')
-let dryCleaningBtn6 = document.querySelector('#addBtn-6')
+
 let data = document.querySelector('.table-row')
 let totalAmount = document.querySelector('.totalAmount')
 let totalSum = 0;
@@ -75,120 +70,28 @@ let singleItem = (item, index) => {
     updateSerialNumbers()
 
 }
-dryCleaningBtn1.addEventListener('click', () => {
-    if (dryCleaningBtn1.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-0')
-        if(rowToRemove){
-            rowToRemove.remove();
+tableData.forEach((item, index) => {
+  const btn = document.querySelector(`#addBtn-${index + 1}`);
+  if (!btn) return;
 
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[0].Price)
-        totalAmount.textContent = totalSum
-    }else{
-        singleItem(tableData[0],0)
-        totalSum += Number(tableData[0].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
+  btn.addEventListener('click', () => {
+    const rowToRemove = document.getElementById(`row-${index}`);
+
+    if (btn.innerText.includes('Add Item')) {
+      if (rowToRemove) {
+        rowToRemove.remove();
+        updateSerialNumbers();
+      }
+      totalSum -= Number(item.Price);
+    } else {
+      singleItem(item, index);
+      totalSum += Number(item.Price);
     }
-    });
-    
 
-dryCleaningBtn2.addEventListener('click', () => {
-    if (dryCleaningBtn2.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-1')
-        if(rowToRemove){
-            rowToRemove.remove();
-
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[1].Price)
-        totalAmount.textContent = totalSum
-    }
-    else{
-        singleItem(tableData[1],1)
-        totalSum += Number(tableData[1].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
-    }
-    });
-
-dryCleaningBtn3.addEventListener('click', () => {
-    if (dryCleaningBtn3.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-2')
-        if(rowToRemove){
-            rowToRemove.remove();
-
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[2].Price)
-        totalAmount.textContent = totalSum
-    }
-    else{
-        singleItem(tableData[2],2)
-        totalSum += Number(tableData[2].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
-    }
-    });
-
-
-dryCleaningBtn4.addEventListener('click', () => {
-    if (dryCleaningBtn4.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-3')
-        if(rowToRemove){
-            rowToRemove.remove();
-
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[3].Price)
-        totalAmount.textContent = totalSum
-    }
-    else{
-        singleItem(tableData[3],3)
-        totalSum += Number(tableData[3].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
-    }
-    });
-
-dryCleaningBtn5.addEventListener('click', () => {
-    if (dryCleaningBtn5.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-4')
-        if(rowToRemove){
-            rowToRemove.remove();
-
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[4].Price)
-        totalAmount.textContent = totalSum
-    }
-    else{
-        singleItem(tableData[4],4)
-        totalSum += Number(tableData[4].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
-    }
-    });
-
-dryCleaningBtn6.addEventListener('click', () => {
-    if (dryCleaningBtn6.innerText.includes('Add Item')) {
-        let rowToRemove = document.getElementById('row-5')
-        if(rowToRemove){
-            rowToRemove.remove();
-
-            updateSerialNumbers()
-        }
-        totalSum  -= Number(tableData[5].Price)
-        totalAmount.textContent = totalSum
-    }
-    else{
-        singleItem(tableData[5],5)
-        totalSum += Number(tableData[5].Price)
-        totalAmount.textContent = totalSum;
-        console.log(totalSum)
-    }
-    });
+    totalAmount.textContent = totalSum;
+    console.log(totalSum);
+  });
+});
 
 
 
