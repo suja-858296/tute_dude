@@ -1,0 +1,38 @@
+/* ------------------------------------------------------------- */
+/* OMNIFOOD RESPONSIVE GRID SYSTEM                                */
+/* ------------------------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Clearfix for floated columns */
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+/* Base column layout */
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child { 
+    margin-left: 0; 
+}
+
+/* Column width definitions */
+.span-1-of-2 { width: 49.2%; }
+.span-1-of-3 { width: 32.26%; }
+.span-2-of-3 { width: 66.13%; }
+.span-1-of-4 { width: 23.8%; }
+.span-2-of-4 { width: 49.2%; }
+.span-3-of-4 { width: 74.6%; }
