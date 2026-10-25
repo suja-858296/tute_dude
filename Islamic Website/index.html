@@ -30,8 +30,8 @@
                 <a href="#" data-en="Courses" data-ur="نصاب">Courses</a>
                 <a href="#" data-en="Mentorship" data-ur="رہنمائی">Mentorship</a>
                 <button class="btn btn-outline" onclick="toggleLanguage()" id="langBtn">اردو / EN</button>
-                <button class="btn btn-primary" onclick="toggleModal()" data-en="Student Login"
-                    data-ur="طالب علم لاگ ان">Student Login</button>
+                <button><a href="login.html" class="btn btn-primary" id="student-login-btn" onclick="toggleModal()" data-en="Student Login"
+                    data-ur="طالب علم لاگ ان">Student Login</a></button>
             </nav>
         </div>
     </header>
@@ -126,34 +126,17 @@
         </div>
     </main>
 
-    <!-- Student Login Modal -->
-    <div> <a href="login.html" class="btn btn-primary" data-en="Student Login" data-ur="طالب علم لاگ ان">Student
-            Login</a>
 
-        <div class="modal" id="loginmodal">
-            <button class="close-btn" onclick="toggleModal()">&times;</button>
-            <h2 style="margin-bottom: 24px;" data-en="Student Portal" data-ur="طالب علم پورٹل">Student Portal</h2>
-            <form onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label data-en="Email Address" data-ur="ای میل ایڈریس">Email Address</label>
-                    <input type="email" required placeholder="scholar@example.com">
-                </div>
-                <div class="form-group">
-                    <label data-en="Password (JWT Auth)" data-ur="پاس ورڈ">Password (JWT Auth)</label>
-                    <input type="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;"
-                    data-en="Login to Dashboard" data-ur="لاگ ان کریں">Login to Dashboard</button>
-            </form>
-        </div>
-    </div>
-    <div class="about-us" id="about-us">q
+
+    
+    <div class="about-us" id="about-us">
         <label for="">About Us</label>
         <div class="section-divider"></div>
         <p>The best online platform to take islamic studies.
             Our best teachers who has passed from the institute like Darul-uloom-Deoband
             Jamiatul-oloom-Nadwatul-ulama.
         </p>
+        </div>
 
 
     </div>

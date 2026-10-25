@@ -1,6 +1,6 @@
 // Modal Logic
 function toggleModal() {
-    const modal = document.getElementById('loginModal');
+    const modal = document.getElementById('loginmodal');
     modal.classList.toggle('active');
 }
 
@@ -37,8 +37,8 @@ function toggleLanguage() {
 function handleLogin(event) {
     event.preventDefault();
 
-    const emailInput = event.target.querySelector(' input[type="email"]');
-    const passwordInput = event.target.querySelector('input[type="password"]');
+    const emailInput = event.target.querySelector(' input[type="email"]').value;
+    const passwordInput = event.target.querySelector('input[type="password"]').value;
 
     const validEmail = "student@lishan.com";
     const validPassword = "password123";
@@ -46,7 +46,7 @@ function handleLogin(event) {
     if (emailInput === validEmail && passwordInput === validPassword) {
         toggleModal();
         alert(`Welcome back! Logged in as: ${emailInput}`);
-        window.location.href = 'dashdoard.html';
+        window.location.href = 'dashboard.html';
     } else {
         alert("Invalid email or password");
     }

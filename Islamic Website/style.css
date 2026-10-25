@@ -3,11 +3,11 @@
     --bg-primary: #FAFAF7;
     --bg-secondary: #F3F1E7;
     --surface: #FFFFFF;
-    
+
     --text-primary: #1A201E;
     --text-secondary: #4A5550;
     --text-arabic: #0F1A15;
-    
+
     --emerald-primary: #145038;
     --emerald-light: #1E7353;
     --gold-accent: #C49C48;
@@ -41,16 +41,21 @@ body {
 /* RTL Support - Arabic/Urdu specific scaling */
 body[dir="rtl"] {
     font-family: var(--font-urdu);
-    font-size: 110%; /* Urdu needs slightly larger base */
+    font-size: 110%;
+    /* Urdu needs slightly larger base */
     line-height: 2.2;
 }
 
-body[dir="rtl"] h1, body[dir="rtl"] h2, body[dir="rtl"] h3 {
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3 {
     font-family: var(--font-arabic);
     line-height: 1.8;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-heading);
     color: var(--emerald-primary);
     font-weight: 600;
@@ -128,9 +133,22 @@ header {
     transition: all 0.2s ease;
 }
 
-.btn-primary {
-    background-color: var(--emerald-primary);
-    color: var(--surface);
+
+.btn-primary a {
+    display: flex;
+    border-radius: none;
+}
+
+#student-login-btn {
+    background-color: var(--emerald-primary, #1b4332);
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#student-login-btn:hover {
+    background-color: var(--emerald-light, #2d6a4f);
+    color: #cac6b9;
 }
 
 .btn-primary:hover {
@@ -278,7 +296,10 @@ header {
 /* Mock Login Modal */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(15, 26, 21, 0.8);
     display: flex;
     justify-content: center;
@@ -303,6 +324,7 @@ header {
     box-shadow: var(--shadow-hover);
     border-top: 4px solid var(--emerald-primary);
 }
+
 
 .form-group {
     margin-bottom: 24px;
@@ -337,10 +359,12 @@ header {
     float: inline-end;
     color: var(--text-muted);
 }
-.about-us{
+
+.about-us {
     background: var(--surface);
 }
-.about-us > label{
+
+.about-us>label {
     display: flex;
     text-align: center;
     text-decoration: none;
@@ -348,9 +372,10 @@ header {
     font-size: 2.5rem;
     padding-left: 40rem;
     color: rgb(2, 81, 2);
-    font-family:var(--font-arabic);
-    font-weight: bold;      
+    font-family: var(--font-arabic);
+    font-weight: bold;
 }
+
 .about-us p {
     display: flex;
     margin-top: 30px;
