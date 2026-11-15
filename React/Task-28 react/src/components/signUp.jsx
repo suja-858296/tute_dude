@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-const signUp = () => {
+const SignUp = () => {
   return (
     <>
     <div className='login-page'>
@@ -25,4 +25,4 @@ const signUp = () => {
   )
 }
 
-export default signUp
+export default SignUp

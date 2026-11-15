@@ -5,11 +5,12 @@ const navbar = () => {
   return (
     <>
       <div className='navbar'>
-        <a className='logo' href="/"><img className='logo-1 ' src="logo.avif" alt="logo" /></a>
-        <a className='home' href="/">Home</a>
+        <a className='logo' to="/"><img className='logo-1 ' src="logo.avif" alt="logo" /></a>
+        <Link className='home' to="/">Home</Link>
         <div className='navbar-2'>
-          <a className='login' href="/login">Login</a>
-          <a className='signup' href="/signup">SignUp</a>
+          <Link className='login' to="/login">Login</Link>
+          <Link className='signup' to="/signup">SignUp</Link>
+          <Link className='dashboard' to="/dashboard">Dashboard</Link>
         </div>
         
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css' 
 
-function login() {
+function Login() {
   return (
     <>
     <div className='login-page'>
@@ -23,4 +23,4 @@ function login() {
   )
 }
 
-export default login
+export default Login

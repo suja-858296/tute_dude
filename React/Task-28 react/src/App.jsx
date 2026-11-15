@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { createBrowserRouter,RouterProvider} from 'react-router-dom';
-import Home from './components/home';
-import Login from './components/login';
-import SignUp from './components/signUp';
+import Home from './components/Home';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 import Navbar from './components/navbar';
-
+import Dashboard from './components/dashboard';
 
 
 
@@ -24,7 +24,11 @@ function App() {
     {
       path:"/signUp",
       element:<><Navbar/><SignUp/></>
-    }
+    },
+    {
+      path:"/dashboard",
+      element:<><Navbar/><Dashboard/></>
+    },
   ]);
 
   return (
