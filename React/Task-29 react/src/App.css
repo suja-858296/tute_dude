@@ -38,3 +38,28 @@
 
 
 
+.proceed-to-pay-btn{
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-right: 40px;
+}
+
+
+/* Navbar */
+.Navbar{
+  display: flex;
+  gap: 240px;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: larger;background:rgb(255, 174, 0) ;
+}
+.Nav-links{
+  display: flex;
+  gap: 120px;
+}
+.nav-img{
+  height: 50px;
+  width: 50px;
+}
